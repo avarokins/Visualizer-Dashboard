@@ -11,8 +11,11 @@
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "react-sidebar": "^3.0.2",
     "react-wordcloud": "^1.2.2",
-    "whatwg-fetch": "^3.0.0"
+    "whatwg-fetch": "^3.0.0",
+    "write-file-p": "^1.0.7",
+    "write-json-file": "^4.3.0"
   },
   "scripts": {
     "start": "react-scripts start",
