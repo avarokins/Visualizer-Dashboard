@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
+import WordCloud from './WordCloud'
 
 class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      age: null,
+      username: 'moo1',
     };
   }
   myChangeHandler = (event) => {
     let nam = event.target.name;
     let val = event.target.value;
     this.setState({[nam]: val});
+    return <WordCloud searchQuery={this.username} />
   }
+
   render() {
     return (
       <form>
@@ -21,12 +23,6 @@ class MyForm extends React.Component {
       <input
         type='text'
         name='username'
-        onChange={this.myChangeHandler}
-      />
-      <p>Enter your age:</p>
-      <input
-        type='text'
-        name='age'
         onChange={this.myChangeHandler}
       />
       </form>

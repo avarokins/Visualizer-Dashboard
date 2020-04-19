@@ -2,7 +2,9 @@ import './CSS/App.css'
 import React, { Component } from 'react'
 import Sidebar from 'react-sidebar'
 import WordCloud from './components/WordCloud.js'
-import Form from './components/Form.js'
+import DropDown from './components/Dropdown.js'
+import InfoBox from './components/InfoBox.js'
+
 
 const mql = window.matchMedia('(min-width: 800px)')
 
@@ -11,11 +13,18 @@ class App extends React.Component {
     super(props)
     this.state = {
       sidebarDocked: mql.matches,
-      sidebarOpen: false
+      sidebarOpen: false,
+      query: ''
     }
-
+    this.callbackFunction1 = this.callbackFunction1.bind(this)
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this)
     this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this)
+  }
+
+  myChangeHandler = (event) => {
+    let nam = event.target.name;
+    let val = event.target.value;
+    this.setState({[nam]: val});
   }
 
   componentWillMount () {
@@ -34,16 +43,25 @@ class App extends React.Component {
     this.setState({ sidebarDocked: mql.matches, sidebarOpen: false })
   }
 
+  callbackFunction1(childData) {
+	this.setState({query:childData})
+  }
+
+
+
   render () {
     return (
       <Sidebar
-        sidebar={<b>Sidebar content</b>}
+        sidebar={<b>
+        	<InfoBox query={this.state.query} />
+        	<DropDown parentCallback = {this.callbackFunction1}/>
+        </b>}
         open={this.state.sidebarOpen}
         docked={this.state.sidebarDocked}
         onSetOpen={this.onSetSidebarOpen}
       >
-        <b>Main content</b>
-        <WordCloud />
+        <h1>WordCloud!</h1>
+        <WordCloud q={this.state.query}/>
       </Sidebar>
     )
   }

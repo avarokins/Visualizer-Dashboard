@@ -1,0 +1,15 @@
+body {
+	color: black;
+	margin: 50
+}
+.title {
+	color: white;
+	background-color: black;
+	padding: 20px;
+	margin-top: 0;
+	font-size: 20px;
+}
+
+.radios {
+	padding: 10px;
+}
