@@ -1,3 +1,8 @@
+While browsing the internet I came accross this website, that had a great visualization of the frequency of words appearing in their dataset. I was really impressed by that, and I wanted to recreate a similar frequency visualizaiton tool. I had a set of articles and I thought to use it to test my implementation. The application searches through all the article titles to find topics, regions, countries and more categories of interest and displays them to the user in a colorful and exciting visualizaiton.
+
+This application is made using React Components, NPM and Bootstrap with CSS styling. This project really solidified my undersanding of working with React and Bootstrap. I also worked with React hooks and redux to transfer data accross components. Visit Application at https://saini2.netlify.app/
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
